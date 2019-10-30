@@ -151,16 +151,6 @@
                   <e p="drop-box-sign-in.guard.ts" t="Include" />
                 </e>
               </e>
-              <e p="home" t="Include">
-                <e p="home.component.html" t="Include" />
-                <e p="home.component.ts" t="Include" />
-              </e>
-              <e p="login" t="Include">
-                <e p="login.component.css" t="Include" />
-                <e p="login.component.html" t="Include" />
-                <e p="login.component.spec.ts" t="Include" />
-                <e p="login.component.ts" t="Include" />
-              </e>
               <e p="nav-menu" t="Include">
                 <e p="nav-menu.component.css" t="Include" />
                 <e p="nav-menu.component.html" t="Include" />
