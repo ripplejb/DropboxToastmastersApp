@@ -7,8 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class DropBoxSignInGuard implements  CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const externalUrl = route.paramMap.get('externalUrl');
-    window.location.href = externalUrl;
+    window.location.href = route.paramMap.get('externalUrl');
     return true;
   }
 

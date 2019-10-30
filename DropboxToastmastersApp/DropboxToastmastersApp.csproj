@@ -29,6 +29,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="ClientApp\src\app\guards\dropboxsignin" />
       <Folder Include="ClientApp\src\app\services\account" />
     </ItemGroup>
 
