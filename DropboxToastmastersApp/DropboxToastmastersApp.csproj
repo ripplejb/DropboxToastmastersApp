@@ -20,8 +20,16 @@
     <ItemGroup>
         <!-- Don't publish the SPA source files, but do show them in the project files list -->
         <Content Remove="$(SpaRoot)**" />
+        <Content Include="ClientApp\src\app\file-explorer\file-explorer.component.css" />
+        <Content Include="ClientApp\src\app\file-explorer\file-explorer.component.html" />
         <None Remove="$(SpaRoot)**" />
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+        <None Include="ClientApp\src\app\models\drop-box.file.ts" />
+        <None Include="ClientApp\src\app\services\file-explorer.service.spec.ts" />
+        <None Include="ClientApp\src\app\services\file-explorer.service.ts" />
+        <None Include="ClientApp\src\app\services\fileexplorer\drop-box.file.ts" />
+        <None Include="ClientApp\src\app\services\fileexplorer\file-explorer.service.spec.ts" />
+        <None Include="ClientApp\src\app\services\fileexplorer\file-explorer.service.ts" />
     </ItemGroup>
 
     <ItemGroup>

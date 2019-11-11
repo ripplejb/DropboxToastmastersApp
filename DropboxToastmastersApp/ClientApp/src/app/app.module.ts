@@ -9,11 +9,14 @@ import {AppComponent} from './app.component';
 import {NavMenuComponent} from './nav-menu/nav-menu.component';
 import {AccountService} from "./services/account/account.service";
 import {DropBoxSignInGuard} from "./guards/dropboxsignin/drop-box-sign-in.guard";
+import { FileExplorerComponent } from './file-explorer/file-explorer.component';
+import {FileExplorerService} from "./services/fileexplorer/file-explorer.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    FileExplorerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
@@ -24,10 +27,14 @@ import {DropBoxSignInGuard} from "./guards/dropboxsignin/drop-box-sign-in.guard"
         path: 'dropboxSignIn',
         canActivate: [DropBoxSignInGuard],
         component: DropBoxSignInGuard
+      },
+      {
+        path: '',
+        component: FileExplorerComponent
       }
     ])
   ],
-  providers: [CookieService, AccountService, DropBoxSignInGuard],
+  providers: [CookieService, AccountService, DropBoxSignInGuard, FileExplorerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

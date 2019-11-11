@@ -1,0 +1,4 @@
+<ul *ngIf="files !== null">
+  <li *ngFor="let file of files">{{ file.name }} <div *ngIf="file.isFolder">(Folder)</div> </li>
+
+</ul>

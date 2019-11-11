@@ -144,12 +144,20 @@
               <e p="app.component.html" t="Include" />
               <e p="app.component.ts" t="Include" />
               <e p="app.module.ts" t="Include" />
-              <e p="app.server.module.ts" t="Include" />
+              <e p="file-explorer" t="Include">
+                <e p="file-explorer.component.css" t="Include" />
+                <e p="file-explorer.component.html" t="Include" />
+                <e p="file-explorer.component.spec.ts" t="Include" />
+                <e p="file-explorer.component.ts" t="Include" />
+              </e>
               <e p="guards" t="Include">
                 <e p="dropboxsignin" t="Include">
                   <e p="drop-box-sign-in.guard.spec.ts" t="Include" />
                   <e p="drop-box-sign-in.guard.ts" t="Include" />
                 </e>
+              </e>
+              <e p="models" t="Include">
+                <e p="drop-box.file.ts" t="Include" />
               </e>
               <e p="nav-menu" t="Include">
                 <e p="nav-menu.component.css" t="Include" />
@@ -160,6 +168,13 @@
                 <e p="account" t="Include">
                   <e p="account.service.spec.ts" t="Include" />
                   <e p="account.service.ts" t="Include" />
+                </e>
+                <e p="file-explorer.service.spec.ts" t="Include" />
+                <e p="file-explorer.service.ts" t="Include" />
+                <e p="fileexplorer" t="Include">
+                  <e p="drop-box.file.ts" t="Include" />
+                  <e p="file-explorer.service.spec.ts" t="Include" />
+                  <e p="file-explorer.service.ts" t="Include" />
                 </e>
               </e>
             </e>
@@ -186,6 +201,7 @@
         </e>
         <e p="Controllers" t="Include">
           <e p="DropboxAccountController.cs" t="Include" />
+          <e p="FilesController.cs" t="Include" />
         </e>
         <e p="DependencyInjections" t="Include">
           <e p="SessionDependencyInjections.cs" t="Include" />
