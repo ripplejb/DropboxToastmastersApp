@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dropbox.Api;
+using Dropbox.Api.Files;
 using DropboxToastmastersApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,6 +46,35 @@ namespace DropboxToastmastersApp.Controllers
             }
 
             return result;
+        }
+
+        private List<Metadata> FileList { get; set; }
+        
+        private async Task GetMetadatas(string path, DropboxClient dbx)
+        {
+            var list = await dbx.Files.ListFolderAsync(path);
+
+            foreach (var metadata in list.Entries)
+            {
+                if (!metadata.IsFile)
+                    FileList.Add(metadata);
+                else
+                {
+                    await GetMetadatas(metadata.PathLower, dbx);
+                }
+            }
+        }
+        
+        [HttpGet("/api/files/rearrange/{sessionId}")]
+        public async Task RearrangeFiles(string sessionId)
+        {
+            var dbx = new DropboxClient(_appData.SessionCache[sessionId]);
+            
+            FileList = new List<Metadata>();
+
+            await GetMetadatas(string.Empty, dbx);
+            
+            // Go through list and get list of folders and create all the folders as batch job.
         }
     }
 
