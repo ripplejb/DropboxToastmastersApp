@@ -13,6 +13,7 @@ export class UserAccount {
   photoUrl: string;
 }
 
+@Injectable()
 export class AccountService {
 
   AccountUrl = 'api/account/';
